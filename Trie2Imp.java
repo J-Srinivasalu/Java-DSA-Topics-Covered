@@ -16,23 +16,6 @@ public class Trie2Imp {
             return links[ch-'a'];
         }
 
-        // void increaseEndWith(){
-        //     countEndWith++;
-        // }
-
-        // void decreaseEndWith(){
-        //     countEndWith--;
-        // }
-
-        // void increasePrefix(){
-        //     countPrefix++;
-        // }
-
-        // void decreasePrefix(){
-        //     countPrefix--;
-        // }
-
-
     }
 
     static class Trie{
@@ -63,6 +46,15 @@ public class Trie2Imp {
             return node.countEndWith;
         }
 
+        int countStartsWith(String s){
+            Node node = root;
+            for(int i=0;i<s.length();i++){
+                char ch = s.charAt(i);
+                node = node.get(ch);
+            }
+            return node.countPrefix;
+        }
+
         void erase(String s){
             Node node = root;
             for(int i=0;i<s.length();i++){
@@ -76,7 +68,19 @@ public class Trie2Imp {
     }
 
     public static void main(String[] args) {
-        
+        Trie trie = new Trie();
+
+        trie.insert("apple");
+        trie.insert("apple");
+        trie.insert("apps");
+        trie.insert("applications");
+
+        System.out.println(trie.countEndWith("apple"));
+        System.out.println(trie.countStartsWith("app"));
+        System.out.println(trie.countEndWith("apps"));
+        trie.erase("apps");
+        System.out.println(trie.countStartsWith("app"));
+        System.out.println(trie.countEndWith("apps"));
 
     }
 
