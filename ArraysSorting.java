@@ -21,6 +21,8 @@ public class ArraysSorting {
         arr[j] = temp;
     }
 
+    //Bubble Sort
+
     static void bubbleSort(int arr[]){
         int n = arr.length;
         for (int i = 1; i < n; i++) {
@@ -31,6 +33,7 @@ public class ArraysSorting {
         }
     }
 
+    //Insertion Sort
     static void insertionSort(int[] arr){
         for(int i=1;i<arr.length;i++){
             int key = arr[i];
@@ -43,6 +46,7 @@ public class ArraysSorting {
         }
     }
 
+    //Selection Sort
     static void selectionSort(int[] arr){
         for(int i=0;i<arr.length;i++){
             int min = i;
@@ -54,6 +58,7 @@ public class ArraysSorting {
         }
     }
 
+    //Cyclic sort
     static void cyclicSort(int[] arr){
         int i = 0;
         while(i < arr.length){

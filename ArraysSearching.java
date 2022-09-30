@@ -10,6 +10,8 @@ public class ArraysSearching {
         System.out.println(binearySearchRecursive(arr,0, arr.length-1, X));
     }
 
+    //Linear Search
+
     static int linearSearch(int[] arr, int X){
         for(int i=0;i<arr.length;i++){
             if(arr[i] == X)
@@ -18,6 +20,7 @@ public class ArraysSearching {
         return -1;
     }
 
+    //Bineary Search Iterative
     static int binearySearchIterative(int arr[], int X){
         int s = 0;
         int e = arr.length-1;
@@ -34,6 +37,8 @@ public class ArraysSearching {
 
         return -1;
     }
+
+    //Bineary Search Recursive
 
     static int binearySearchRecursive(int arr[],int s, int e, int X){
         if(s<=e){

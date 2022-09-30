@@ -11,6 +11,8 @@ public class ArraySortingRec {
         
     }
 
+
+    // Merge Sort
     static void mergeSort(int[] arr, int l, int h){
         if(l >=h) return;
         int m = l + (h - l)/2;
@@ -45,6 +47,8 @@ public class ArraySortingRec {
         }
 
     }
+
+    // Quick Sort
 
     static void quickSort(int[] arr, int l, int h){
         if(l>=h) return;
