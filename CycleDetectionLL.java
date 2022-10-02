@@ -8,6 +8,7 @@ public class CycleDetectionLL {
             this.next = next;
         }
     }
+  
     public static void main(String[] args) {
 
         Node node0 = new Node(0, null);

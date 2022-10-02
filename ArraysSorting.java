@@ -15,6 +15,7 @@ public class ArraysSorting {
         System.out.println(Arrays.toString(arr1));
     }
 
+
     static void swap(int[] arr, int i, int j){
         int temp = arr[i];
         arr[i] = arr[j];
@@ -22,7 +23,8 @@ public class ArraysSorting {
     }
 
     //Bubble Sort
-
+    // TC: O(N^2)
+    // SC: O(1)
     static void bubbleSort(int arr[]){
         int n = arr.length;
         for (int i = 1; i < n; i++) {
@@ -34,6 +36,8 @@ public class ArraysSorting {
     }
 
     //Insertion Sort
+    // TC: O(N^2)
+    // SC: O(1)
     static void insertionSort(int[] arr){
         for(int i=1;i<arr.length;i++){
             int key = arr[i];
@@ -47,6 +51,8 @@ public class ArraysSorting {
     }
 
     //Selection Sort
+    // TC: O(N^2)
+    // SC: O(1)
     static void selectionSort(int[] arr){
         for(int i=0;i<arr.length;i++){
             int min = i;
@@ -59,6 +65,8 @@ public class ArraysSorting {
     }
 
     //Cyclic sort
+    // TC: O(N)
+    // SC: O(1)
     static void cyclicSort(int[] arr){
         int i = 0;
         while(i < arr.length){

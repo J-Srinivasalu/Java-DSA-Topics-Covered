@@ -27,6 +27,8 @@ public class Arrays2D {
     }
 
     //Search in 2D array row and column wise sorted
+    // TC: O(N) or O(M)
+    // SC: O(1)
     static Pair search(int[][] arr, int target){
         int i = 0;
         int j = arr[0].length-1;
@@ -46,6 +48,10 @@ public class Arrays2D {
 
         return new Pair(-1, -1);
     }
+
+    // Binary Search based 2D array search
+    // TC: O(log(N*M))
+    // SC: O(1)
     static Pair binarySearch(int[][] arr, int target){
         int m = arr.length;
         int n = arr[0].length;

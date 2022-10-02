@@ -11,7 +11,8 @@ public class ArraysSearching {
     }
 
     //Linear Search
-
+    // TC: O(N)
+    // SC: O(1)
     static int linearSearch(int[] arr, int X){
         for(int i=0;i<arr.length;i++){
             if(arr[i] == X)
@@ -21,6 +22,8 @@ public class ArraysSearching {
     }
 
     //Bineary Search Iterative
+    // TC: O(log(N))
+    // SC: O(1)
     static int binearySearchIterative(int arr[], int X){
         int s = 0;
         int e = arr.length-1;
@@ -39,7 +42,8 @@ public class ArraysSearching {
     }
 
     //Bineary Search Recursive
-
+    // TC: O(log(N))
+    // SC: O(log(N))
     static int binearySearchRecursive(int arr[],int s, int e, int X){
         if(s<=e){
             int m = s + (e-s)/2;

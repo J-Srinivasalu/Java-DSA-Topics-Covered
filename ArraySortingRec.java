@@ -13,6 +13,8 @@ public class ArraySortingRec {
 
 
     // Merge Sort
+    // TC: O(Nlog(N))
+    // SC: O(N) + O(log(N))
     static void mergeSort(int[] arr, int l, int h){
         if(l >=h) return;
         int m = l + (h - l)/2;
@@ -49,7 +51,8 @@ public class ArraySortingRec {
     }
 
     // Quick Sort
-
+    // TC: O(N^2)
+    // SC: O(N)
     static void quickSort(int[] arr, int l, int h){
         if(l>=h) return;
         int p = partition(arr, l, h);
