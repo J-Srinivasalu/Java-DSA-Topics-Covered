@@ -1,3 +1,5 @@
+import java.util.Arrays;
+
 public class HeapImp {
     static int N = 10000; // Max length of heap;
     static int[] maxHeap = new int[N];
@@ -6,24 +8,31 @@ public class HeapImp {
     static int posMinHeap = 0; // Current size or last element position in Max Heap
 
     public static void main(String[] args) {
-        insertMax(1);
-        insertMax(13);
-        insertMax(12);
-        insertMax(4);
-        insertMax(42);
-        insertMax(21);
-        insertMin(1);
-        insertMin(13);
-        insertMin(12);
-        insertMin(4);
-        insertMin(42);
-        insertMin(21);
-        printHeap(maxHeap, posMaxHeap);
-        printHeap(minHeap, posMinHeap);
-        deleteMax();
-        deleteMin();
-        printHeap(maxHeap, posMaxHeap);
-        printHeap(minHeap, posMinHeap);
+
+        int[] arr = {0, 1,56,32,11, 54, 2, 3};
+        int n = arr.length-1;
+        buildHeap(arr, n);
+        System.out.println(Arrays.toString(arr));
+
+        // insertMax(1);
+        // insertMax(13);
+        // insertMax(12);
+        // insertMax(4);
+        // insertMax(42);
+        // insertMax(21);
+        // insertMin(1);
+        // insertMin(13);
+        // insertMin(12);
+        // insertMin(4);
+        // insertMin(42);
+        // insertMin(21);
+        // printHeap(maxHeap, posMaxHeap);
+        // printHeap(minHeap, posMinHeap);
+        // deleteMax();
+        // deleteMin();
+        // printHeap(maxHeap, posMaxHeap);
+        // printHeap(minHeap, posMinHeap);
+
     }
     static void swap(int[] arr, int a, int b){
         int temp = arr[a];
@@ -115,5 +124,29 @@ public class HeapImp {
             }
         }
 
+    }
+
+    //build Max Heap
+    static void buildHeap(int[] heap, int n){
+        for(int i=n/2;i>0;i--){
+            heapifyMaxHeap(heap, n, i);
+        }
+    }
+
+    // Heapify Max Heap
+    static void heapifyMaxHeap(int[] heap,int n, int i){
+        int largest = i;
+        int l = 2*i;
+        int r = 2*i+1;
+        if(l<=n && heap[l] > heap[largest]){
+            largest = l;
+        }
+        if(r<=n && heap[r] > heap[largest]){
+            largest = r;
+        }
+        if(largest != i){
+            swap(heap, i, largest);
+            heapifyMaxHeap(heap, n, largest);
+        }
     }
 }
