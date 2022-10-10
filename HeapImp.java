@@ -11,7 +11,9 @@ public class HeapImp {
 
         int[] arr = {0, 1,56,32,11, 54, 2, 3};
         int n = arr.length-1;
-        buildHeap(arr, n);
+        buildMaxHeap(arr, n);
+        System.out.println(Arrays.toString(arr));
+        buildMinHeap(arr, n);
         System.out.println(Arrays.toString(arr));
 
         // insertMax(1);
@@ -127,7 +129,7 @@ public class HeapImp {
     }
 
     //build Max Heap
-    static void buildHeap(int[] heap, int n){
+    static void buildMaxHeap(int[] heap, int n){
         for(int i=n/2;i>0;i--){
             heapifyMaxHeap(heap, n, i);
         }
@@ -149,4 +151,30 @@ public class HeapImp {
             heapifyMaxHeap(heap, n, largest);
         }
     }
+
+    //build Max Heap
+    static void buildMinHeap(int[] heap, int n){
+        for(int i=n/2;i>0;i--){
+            heapifyMinHeap(heap, n, i);
+        }
+    }
+
+    //Heapify Min Heap
+    static void heapifyMinHeap(int[] heap, int n, int i){
+        int smallest = i;
+        int l = 2*i;
+        int r = 2*i+1;
+        if(l<=n && heap[l]<heap[smallest]){
+            smallest = l;
+        }
+        if(r<=n && heap[r]<heap[smallest]){
+            smallest = r;
+        }
+        if(smallest != i){
+            swap(heap, smallest, i);
+            heapifyMinHeap(heap, n, smallest);
+        }
+    }
+
+
 }
