@@ -177,4 +177,15 @@ public class HeapImp {
     }
 
 
+    //Heap sort
+    //TC: O(nlog(n))
+    //SC: O(1)
+    static void heapSort(int[] arr, int n){
+        for(int i=n;i>1;i--){
+            swap(arr, 1, i);
+            heapifyMaxHeap(arr, i-1, 1); // ascending order; for descending order heapifyMinHeap
+        }
+    }
+
+
 }
